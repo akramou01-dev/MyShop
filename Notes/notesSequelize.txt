@@ -1,0 +1,15 @@
+Object.create() : crée un object qui est basé sur Object qu'on travaille avec et puis l'enregistrer dans la bdd elle prend comment arguments les info de l'object
+Object.build() : crée un object seulement dans JS   
+Object.findAll() : get all the records of the model Object , on peut lui ajouter un object dans les parramettre pour definir 
+                    les attribue qu'on veut extraire ou pour exprimer des conditioon (les exemples sont dans les SquelizeDocs)
+Object.destroy( ?{Where ...} ) : pour la suppression de la bdd on peut ajouter des conditioon via where 
+NB : pour la suppression on peut recherche l'objet dans la bdd apres la recherche on le supprime    
+NB : pour daire des relation entre les tables il faut importer tout les models dans "app.js" et faire la relation avant la sync
+Object1.belongsTo(Object2, ?{}) : faire une relation entre Object1 et Object2 (Object2 )
+Object2.hasMany(Object1)
+NB: si on fait une nouvelle relation entre  2 tables alors il faut ajouter a .sync({force : true }) et les é tables seront supprmier et crée a nv 
+NB: si on fait une relation entre 2 tables alors une methode sera generer auto qui crée un nv object qui belongsTo l'autre object   Object2.createObject1() qui crée un object qui est relier entre les 2 tables avec les clée étrangere 
+NB: pour les manyToMany relations on a le addObject qui ajoute une valeur a la table qui est intermediére 
+
+
+ 

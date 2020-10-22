@@ -1,2 +1,2 @@
-# MyShop
-Creating an online shop Using the MVC 
+# Shop
+Building an online Shop Using NodeJs (Statique Web Dev)

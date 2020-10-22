@@ -1,0 +1,11 @@
+Cookies : on les utilise pour envoyer des information dans chaquer request comme (le user est connecter) et il seront stocker 
+dans le navigateur du user comme ca on les manipule pour avoir un affichage personalisé
+ 
+res.setHeader('Set-Cookie','//...information')
+
+parmis els information on peut ajouter des donnée pour dir que le user est loggedIn :
+Max-Age=? : pour donner un temps pour que la cookie expire  
+Expire : pour donner la date quand la cookie expire 
+Secure :cad que cette cookie ne soit pas ajouter sauf si cette page est securisée pas HTTPS
+Domain=? : le domain de la cookie 
+HttpOnly : cad on peut pas accédé a la cookie a travers le coté client (pour eviter les Crossing Sides Scripting Attack)

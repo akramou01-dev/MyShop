@@ -1,0 +1,15 @@
+pour insérer un seul élement on utilise insertOne et on lui donne un JS object etpour plusieurs élements on utilise 
+insertMany et on lui donne un tab de JS objects
+la methode insertOne ca nous retournne un promisse  
+pour rechercher dans une "collection' on utilise find et ca nous retourne un "cursor" on doit utiliser la methode toArray kan il s'agit de bkp et next kan il s'agit d'un seul element
+pour updating an element on utilise updateOne et il ya updateMany pour plsr
+l"idée du suppression d'un element c de faire un update dans la collection
+en travaillant avec mongoos on fait exporté le model en applant la fonction mongoos.model('model_name', model_Schema);
+pour avoir des relation dans mongoos on utilise ref : 'Model_Name'
+pour les methode comme fins on peut utiliser .populate('field_name') pour nous donner tout les détails a propos field_name 
+    pour populate on peut choisir les fields qu'on veut fetcher depuis les details on donnant le nom du field en 2eme argum
+comme on peut choisir les fields qu'on veut raporter depuis la base avec .select('field name -_id) : on fetch field name et non pas _id
+^
+pour chaque model on peut ajouter des fonctions " men 3adna" pour la bonne pratique en utilisant model_Schema.methods.method_name = function(){
+
+} 

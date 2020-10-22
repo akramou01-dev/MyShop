@@ -1,0 +1,10 @@
+{
+    "env": {
+        "DEFAULT_DATABASE_NAME": "node-complete",
+        "DEFAULT_DATABASE_USER": "root",
+        "DEFAULT_DATABASE_PASSWORD": "FattA -_-",
+        "NODEMAILER_API_KEY": "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",
+        "STRIP_KEY": "sk_test_qSyNDJrw8zyxGORR9BVZFO7Y00ZWfWnjbm"
+
+    }
+}

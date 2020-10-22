@@ -1,0 +1,48 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/CSS/forms.css">
+    <link rel="stylesheet" href="/CSS/auth.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <!-- <% if (errorMessage) { %>
+                    <div class="user-message user-message--error">
+                        <%= errorMessage %>
+                    </div>
+                    <% }%> -->
+                <form class="login-form" action="/signup" method="POST" novalidate>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <div class="form-control">
+                        <label for="text">Full Name</label>
+                        <input class="<%= validationErrors.find(err => err.param === 'fullName') ? 'invalid' : ''%>" type="text" name="fullName" id="fullName" value="<%=oldInput.fullName %>">
+                        <%message ="" %>
+                            <% validationErrors.forEach(err => { if (err.param ==='fullName' ) { message = err.msg } } ) %>
+                                <label for="text" class="error"><%= message %></label>
+                    </div>
+                    <div class="form-control">
+                        <label for="email">E-Mail</label>
+                        <input class="<%= validationErrors.find(err => err.param === 'email') ? 'invalid' : ''%>" type="email" name="email" id="email" value="<%= oldInput.email %>">
+                        <%message ="" %>
+                            <% validationErrors.forEach(err => { if (err.param ==='email' ) { message = err.msg } } ) %>
+                                <label for="text" class="error"><%= message %></label>
+                    </div>
+                    <div class="form-control">
+                        <label for="password">Password</label>
+                        <input class="<%= validationErrors.find(err => err.param === 'password') ? 'invalid' : ''%>" type="password" name="password" id="password" value="<%= oldInput.password %>">
+                        <%message ="" %>
+                            <% validationErrors.forEach(err => { if (err.param ==='password' ) { message = err.msg } } ) %>
+                                <label for="text" class="error"><%= message %></label>
+                    </div>
+                    <div class="form-control">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input class="<%= validationErrors.find(err => err.param === 'confirmPassword') ? 'invalid' : ''%>" type="password" name="confirmPassword" id="confirmPassword" value="<%= oldInput.confirmPassword %>">
+                        <%message ="" %>
+                            <% validationErrors.forEach(err => { if (err.param ==='confirmPassword' ) { message = err.msg } } ) %>
+                                <label for="text" class="error"><%= message %></label>
+                    </div>
+                    <button class="btn" type="submit">Signup</button>
+                </form>
+            </main>
+            <%- include('../includes/end.ejs') %>
